@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 
-gem 'pg' # use postgres as development and test db
-
+gem 'pg'   # use postgres as development and test db
+gem 'thin' # use thin as development server
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -13,6 +13,12 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -3,4 +3,9 @@
   <li><%= i.description %></li>
 <% end %>
 </ul>
+
+<%= form_for @item do |f| %>
+  <%= f.text_field :description %>
+  <%= f.submit %>
+<% end %>
   

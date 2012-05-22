@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
     else
       flash[:notice] = "nope."
     end
-    redirect_to :index
+    redirect_to items_url
   end
 
 end

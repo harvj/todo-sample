@@ -1,11 +1,13 @@
+<% title "Stuff to do" %>
+
+<div id="item_form">
+  <%= render 'form' %>
+</div>
+
 <ul>
 <% @items.each do |i| %>
   <li><%= i.description %></li>
 <% end %>
 </ul>
 
-<%= form_for @item do |f| %>
-  <%= f.text_field :description %>
-  <%= f.submit %>
-<% end %>
   

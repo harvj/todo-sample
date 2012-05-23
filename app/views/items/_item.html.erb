@@ -1,0 +1,5 @@
+<%= content_tag_for(:li, item) do %>
+  <div class="description"><%= item.description %></div>
+  <span class="posted_at">Posted <%= time_ago_in_words(item.created_at) %> ago.
+  (<%= link_to "Delete", item, :confirm => 'Are you sure?', :method => :delete %>)</span>
+<% end %>

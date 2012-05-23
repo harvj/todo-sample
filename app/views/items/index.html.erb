@@ -4,10 +4,8 @@
   <%= render 'form' %>
 </div>
 
-<ul>
-<% @items.each do |i| %>
-  <li><%= i.description %></li>
-<% end %>
+<ul id="item_list">
+<%= render :partial => @items.reverse %>
 </ul>
 
   

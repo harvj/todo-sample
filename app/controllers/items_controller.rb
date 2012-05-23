@@ -13,7 +13,13 @@ class ItemsController < ApplicationController
     else
       flash[:notice] = "nope."
     end
-    redirect_to items_url
+    redirect_to root_url
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to root_url
   end
 
 end

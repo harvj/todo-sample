@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
     if @item.save
       flash[:notice] = "Nice."
     else
-      flash[:notice] = "nope."
+      flash[:alert] = "nope."
     end
     redirect_to root_url
   end

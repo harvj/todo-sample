@@ -10,6 +10,7 @@
 //= require_self
 
 @import "bootstrap"
+@import "colors"
 
 .container
   padding: 20px 0
@@ -25,7 +26,13 @@ ul#item_list
   list-style-type: none
   margin-left: 0 
   li
-    padding: 3px 0
+    background: lighten($green, 38%)
+    border-radius: 3px
+    margin-bottom: 3px
+    padding: 3px 10px
+    width: 400px
+    &:hover
+      border: 1px solid $green
     .posted_at
       font-size: 80%
-      color: #a8a8a8
+      color: darken($light, 30%)

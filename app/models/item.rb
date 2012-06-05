@@ -14,7 +14,4 @@ class Item < ActiveRecord::Base
 
   end
 
-  def initialize
-    super()
-  end
 end

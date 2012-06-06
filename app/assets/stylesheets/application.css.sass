@@ -22,6 +22,9 @@ form#new_item
   input
     margin-bottom: 0
 
+a.delete
+  color: $red
+
 ul#item_list
   list-style-type: none
   margin-left: 0 
@@ -31,6 +34,12 @@ ul#item_list
     margin-bottom: 3px
     padding: 3px 10px
     width: 400px
+    .state
+      font-size: 90%
+      &.active
+        color: $blue
+      &.completed
+        color: $green
     .posted_at
       font-size: 80%
       color: darken($light, 30%)

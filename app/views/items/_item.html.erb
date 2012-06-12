@@ -1,10 +1,12 @@
 <%= content_tag_for(:li, item) do %>
   <div class="description">
-    <span class="state <%= item.state %>"><%= item.state %></span>
     <%= item.description %>
   </div>
+  <span class="state <%= item.state %>"><%= item.state %></span>
   <span class="posted_at">
     Added <%= time_ago_in_words(item.created_at) %> ago on <%= time_tag item.created_at %>.
-    (<%= link_to "Delete", item, :method => :delete, :class => 'delete' %>)
+  </span>
+  <span class="delete">
+    <%= link_to "delete", item, :method => :delete, :class => 'delete' %>
   </span>
 <% end %>

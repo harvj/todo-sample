@@ -10,9 +10,9 @@
 
 <div class="container">
   <% if flash[:notice] %>
-    <div class="alert alert-success"><%= flash[:notice] %></div>
+    <div class="alert alert-success span4"><%= flash[:notice] %></div>
   <% elsif flash[:alert] %>
-    <div class="alert alert-error"><%= flash[:alert] %></div>
+    <div class="alert alert-error span4"><%= flash[:alert] %></div>
   <% end %>
 
   <%= yield %>

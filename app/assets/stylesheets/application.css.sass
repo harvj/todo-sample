@@ -40,6 +40,7 @@ ul#item_list
     padding: 3px 10px
     width: 500px
     .controls
+      cursor: pointer
       float: left
       height: 13px
       width: 14px
@@ -47,10 +48,12 @@ ul#item_list
       margin: 5px 5px 0 0 
     .state
       font-size: 90%
-      &.active
-        color: $blue
-      &.completed
-        color: $green
     .posted_at
       font-size: 80%
       color: darken($light, 30%)
+  li.active
+    .state
+      color: $blue
+  li.completed
+    .state
+      color: $green

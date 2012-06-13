@@ -1,10 +1,10 @@
-<%= content_tag_for(:li, item) do %>
+<%= content_tag_for(:li, item, :class => item.state) do %>
   <div id="<%= item.id %>_checkbox" class="controls" data-state="<%= item.state %>">
   </div>
   <div class="description">
     <%= item.description %>
   </div>
-  <span class="state <%= item.state %>"><%= item.state %></span>
+  <span class="state"><%= item.state %></span>
   <span class="posted_at">
     Added <%= time_ago_in_words(item.created_at) %> ago on <%= time_tag item.created_at %>.
   </span>

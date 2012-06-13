@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.order('created_at desc')
+    @items = Item.order('updated_at desc')
     @item  = Item.new
   end
 
@@ -14,6 +14,13 @@ class ItemsController < ApplicationController
       flash[:alert] = "Nope."
     end
     redirect_to root_url
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @item.update_attributes(:description => params[:description])
+    @items = Item.order('updated_at desc')
+    respond_to :js
   end
 
   def destroy

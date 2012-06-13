@@ -17,5 +17,13 @@
 
 $(document).ready(function() {
   $('.alert').fadeOut(5000);
+
+  $('#item_list').delegate('li[id^="item"]', 'click', function() {
+    var id = parseInt($(this).attr('id').replace(/\D+/g,''));
+    $.ajax('/items/' + id, {
+      type: "PUT",
+      data: { description: "awesome" }
+    });
+  });
 });
 

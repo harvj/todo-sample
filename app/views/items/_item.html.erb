@@ -1,4 +1,6 @@
 <%= content_tag_for(:li, item) do %>
+  <div id="<%= item.id %>_checkbox" class="controls" data-state="<%= item.state %>">
+  </div>
   <div class="description">
     <%= item.description %>
   </div>

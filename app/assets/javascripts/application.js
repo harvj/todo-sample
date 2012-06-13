@@ -18,11 +18,12 @@
 $(document).ready(function() {
   $('.alert').fadeOut(5000);
 
-  $('#item_list').delegate('li[id^="item"]', 'click', function() {
-    var id = parseInt($(this).attr('id').replace(/\D+/g,''));
+  $('#item_list').delegate('div[id$="checkbox"]', 'click', function() {
+    var id = parseInt($(this).attr('id'));
+    var state = $(this).data('state');
     $.ajax('/items/' + id, {
       type: "PUT",
-      data: { description: "awesome" }
+      data: { state: state }
     });
   });
 });

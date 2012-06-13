@@ -18,7 +18,13 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    @item.update_attributes(:description => params[:description])
+    if params[:state]
+      if @item.active?
+        @item.complete
+      else
+        @item.restart
+      end
+    end
     @items = Item.order('updated_at desc')
     respond_to :js
   end
